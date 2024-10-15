@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Sketch Brand</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="relative">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-3xl font-bold sketch-text">SketchBrand</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#" class="sketch-link">Home</a>
+                    <a href="#" class="sketch-link">About</a>
+                    <a href="#" class="sketch-link">Services</a>
+                    <a href="#" class="sketch-link">Contact</a>
+                </div>
+                <button class="sketch-button menu-button">Menu</button>
+
+                <style>
+                  @media (max-width: 767px) {
+                    .menu-button {
+                      display: none;
+                    }
+                  }
+                </style>
+                
+                <div class="md:hidden">
+                    <button id="menu-button" class="text-3xl">&#9776;</button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden flex flex-col space-y-2 mt-3">
+                <a href="#" class="sketch-link">Home</a>
+                <a href="#" class="sketch-link">About</a>
+                <a href="#" class="sketch-link">Services</a>
+                <a href="#" class="sketch-link">Contact</a>
+            </div>
+        </nav>
+    </header>
+    
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+    
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+    
+
+    <section id="hero" class="container mx-auto px-6 py-16 relative">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0">
+                <h1 class="text-5xl md:text-6xl font-bold mb-4 sketch-text">Unleash Your Creativity</h1>
+                <p class="text-xl mb-8 sketch-text">Where imagination meets innovation. Let's bring your ideas to life!</p>
+                <a href="#" class="sketch-button text-lg px-6 py-3">Get Started</a>
+            </div>
+            <div class="md:w-1/2">
+                <div id="sketch-canvas" class="w-full h-64 md:h-96 bg-white rounded-lg shadow-lg"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="bg-gray-100 py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-8 text-center sketch-text">Our Creative Journey</h2>
+            <div class="timeline relative">
+                <div class="timeline-item left">
+                    <div class="content">
+                        <h3 class="text-2xl font-bold mb-2 sketch-text">The Spark</h3>
+                        <p class="mb-4">It all began with a simple idea: to bring imagination to life through design.</p>
+                        <div class="sketch-image" data-sketch="lightbulb"></div>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="content">
+                        <h3 class="text-2xl font-bold mb-2 sketch-text">The Adventure</h3>
+                        <p class="mb-4">We embarked on a journey, exploring new territories of creativity and innovation.</p>
+                        <div class="sketch-image" data-sketch="mountain"></div>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="content">
+                        <h3 class="text-2xl font-bold mb-2 sketch-text">The Growth</h3>
+                        <p class="mb-4">With each project, we learned, adapted, and grew, nurturing our passion for design.</p>
+                        <div class="sketch-image" data-sketch="tree"></div>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="content">
+                        <h3 class="text-2xl font-bold mb-2 sketch-text">The Impact</h3>
+                        <p class="mb-4">Today, we're proud to create designs that inspire and make a difference.</p>
+                        <div class="sketch-image" data-sketch="ripple"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.15/paper-full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
