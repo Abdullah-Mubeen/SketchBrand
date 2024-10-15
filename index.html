@@ -101,6 +101,88 @@
         </div>
     </section>
 
+    <section id="events" class="bg-white py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-8 text-center sketch-text">Upcoming Events</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="event-card">
+                    <div class="sketch-image" data-sketch="workshop"></div>
+                    <h3 class="text-2xl font-bold mb-2 sketch-text">Creative Workshop</h3>
+                    <p class="mb-2">Date: June 15, 2023</p>
+                    <p class="mb-4">Join us for a day of creative exploration and skill-sharing.</p>
+                    <a href="#" class="sketch-button">Learn More</a>
+                </div>
+                <div class="event-card">
+                    <div class="sketch-image" data-sketch="exhibition"></div>
+                    <h3 class="text-2xl font-bold mb-2 sketch-text">Art Exhibition</h3>
+                    <p class="mb-2">Date: July 1-15, 2023</p>
+                    <p class="mb-4">Experience a curated collection of innovative artworks.</p>
+                    <a href="#" class="sketch-button">Learn More</a>
+                </div>
+                <div class="event-card">
+                    <div class="sketch-image" data-sketch="conference"></div>
+                    <h3 class="text-2xl font-bold mb-2 sketch-text">Design Conference</h3>
+                    <p class="mb-2">Date: August 5-7, 2023</p>
+                    <p class="mb-4">Connect with industry leaders and emerging talents.</p>
+                    <a href="#" class="sketch-button">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="bg-gray-100 py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-8 text-center sketch-text">What Our Clients Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="testimonial-card">
+                    <div class="sketch-quote"></div>
+                    <p class="mb-4">SketchBrand transformed our vision into reality. Their creative approach and attention to detail are unmatched!</p>
+                    <p class="font-bold">- Sarah Johnson, CEO of InnoTech</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="sketch-quote"></div>
+                    <p class="mb-4">Working with SketchBrand was a game-changer for our brand. They brought fresh ideas and exceptional execution.</p>
+                    <p class="font-bold">- Mike Chen, Founder of GreenLeaf</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-white py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-8 text-center sketch-text">Get in Touch</h2>
+            <div class="flex flex-wrap -mx-3 mb-6">
+                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <form id="contact-form" class="sketch-form">
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Name</label>
+                            <input class="sketch-input" id="name" type="text" placeholder="Your Name">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
+                            <input class="sketch-input" id="email" type="email" placeholder="your@email.com">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="message">Message</label>
+                            <textarea class="sketch-input" id="message" placeholder="Your message here..." rows="4"></textarea>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <button class="sketch-button" type="submit">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="w-full md:w-1/2 px-3">
+                    <div class="sketch-map" id="map"></div>
+                    <div class="mt-4">
+                        <p class="mb-2"><strong>Address:</strong> 123 Creativity Lane, Imagination City, 12345</p>
+                        <p class="mb-2"><strong>Phone:</strong> (555) 123-4567</p>
+                        <p class="mb-2"><strong>Email:</strong> hello@sketchbrand.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.15/paper-full.min.js"></script>
     <script src="script.js"></script>
 </body>
