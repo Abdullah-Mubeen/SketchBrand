@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creative Sketch Brand</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="bg-gray-100 font-sans">
     <header class="relative">
         <nav class="container mx-auto px-6 py-3">
@@ -22,13 +26,13 @@
                 <button class="sketch-button menu-button">Menu</button>
 
                 <style>
-                  @media (max-width: 767px) {
-                    .menu-button {
-                      display: none;
+                    @media (max-width: 767px) {
+                        .menu-button {
+                            display: none;
+                        }
                     }
-                  }
                 </style>
-                
+
                 <div class="md:hidden">
                     <button id="menu-button" class="text-3xl">&#9776;</button>
                 </div>
@@ -41,22 +45,23 @@
             </div>
         </nav>
     </header>
-    
+
     <script>
         const menuButton = document.getElementById('menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-    
+
         menuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
     </script>
-    
+
 
     <section id="hero" class="container mx-auto px-6 py-16 relative">
         <div class="flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 mb-8 md:mb-0">
                 <h1 class="text-5xl md:text-6xl font-bold mb-4 sketch-text">Unleash Your Creativity</h1>
-                <p class="text-xl mb-8 sketch-text">Where imagination meets innovation. Let's bring your ideas to life!</p>
+                <p class="text-xl mb-8 sketch-text">Where imagination meets innovation. Let's bring your ideas to life!
+                </p>
                 <a href="#" class="sketch-button text-lg px-6 py-3">Get Started</a>
             </div>
             <div class="md:w-1/2">
@@ -72,21 +77,24 @@
                 <div class="timeline-item left">
                     <div class="content">
                         <h3 class="text-2xl font-bold mb-2 sketch-text">The Spark</h3>
-                        <p class="mb-4">It all began with a simple idea: to bring imagination to life through design.</p>
+                        <p class="mb-4">It all began with a simple idea: to bring imagination to life through design.
+                        </p>
                         <div class="sketch-image" data-sketch="lightbulb"></div>
                     </div>
                 </div>
                 <div class="timeline-item right">
                     <div class="content">
                         <h3 class="text-2xl font-bold mb-2 sketch-text">The Adventure</h3>
-                        <p class="mb-4">We embarked on a journey, exploring new territories of creativity and innovation.</p>
+                        <p class="mb-4">We embarked on a journey, exploring new territories of creativity and
+                            innovation.</p>
                         <div class="sketch-image" data-sketch="mountain"></div>
                     </div>
                 </div>
                 <div class="timeline-item left">
                     <div class="content">
                         <h3 class="text-2xl font-bold mb-2 sketch-text">The Growth</h3>
-                        <p class="mb-4">With each project, we learned, adapted, and grew, nurturing our passion for design.</p>
+                        <p class="mb-4">With each project, we learned, adapted, and grew, nurturing our passion for
+                            design.</p>
                         <div class="sketch-image" data-sketch="tree"></div>
                     </div>
                 </div>
@@ -101,70 +109,177 @@
         </div>
     </section>
 
-    <section id="events" class="bg-white py-16">
+    <!-- Events Carousel -->
+    <section id="events" class="bg-gray-100 py-16">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-8 text-center sketch-text">Upcoming Events</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="event-card">
-                    <div class="sketch-image" data-sketch="workshop"></div>
-                    <h3 class="text-2xl font-bold mb-2 sketch-text">Creative Workshop</h3>
-                    <p class="mb-2">Date: June 15, 2023</p>
-                    <p class="mb-4">Join us for a day of creative exploration and skill-sharing.</p>
-                    <a href="#" class="sketch-button">Learn More</a>
+            <h2 class="text-4xl font-bold mb-12 text-center sketch-text">Upcoming Events</h2>
+            <div class="events-slider-container">
+                <div class="events-slider">
+                    <div class="event-card">
+                        <div class="sketch-image" data-sketch="workshop">
+                            <div class="event-date">
+                                <span class="day">15</span>
+                                <span class="month">JUN</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2 sketch-text">Creative Workshop</h3>
+                            <p class="mb-2 text-gray-600"><i class="fas fa-map-marker-alt mr-2"></i>Artistry Studio</p>
+                            <p class="mb-4">Join us for a day of creative exploration and skill-sharing.</p>
+                            <a href="#" class="sketch-button">Register Now</a>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="sketch-image" data-sketch="exhibition">
+                            <div class="event-date">
+                                <span class="day">01</span>
+                                <span class="month">JUL</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2 sketch-text">Art Exhibition</h3>
+                            <p class="mb-2 text-gray-600"><i class="fas fa-map-marker-alt mr-2"></i>Urban Gallery</p>
+                            <p class="mb-4">Experience a curated collection of innovative artworks.</p>
+                            <a href="#" class="sketch-button">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="sketch-image" data-sketch="conference">
+                            <div class="event-date">
+                                <span class="day">05</span>
+                                <span class="month">AUG</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2 sketch-text">Design Conference</h3>
+                            <p class="mb-2 text-gray-600"><i class="fas fa-map-marker-alt mr-2"></i>Innovation Center</p>
+                            <p class="mb-4">Connect with industry leaders and emerging talents.</p>
+                            <a href="#" class="sketch-button">Get Tickets</a>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="sketch-image" data-sketch="conference">
+                            <div class="event-date">
+                                <span class="day">09</span>
+                                <span class="month">AUG</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2 sketch-text">Design Conference</h3>
+                            <p class="mb-2 text-gray-600"><i class="fas fa-map-marker-alt mr-2"></i>Innovation Center</p>
+                            <p class="mb-4">Connect with industry leaders and emerging talents.</p>
+                            <a href="#" class="sketch-button">Get Tickets</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="event-card">
-                    <div class="sketch-image" data-sketch="exhibition"></div>
-                    <h3 class="text-2xl font-bold mb-2 sketch-text">Art Exhibition</h3>
-                    <p class="mb-2">Date: July 1-15, 2023</p>
-                    <p class="mb-4">Experience a curated collection of innovative artworks.</p>
-                    <a href="#" class="sketch-button">Learn More</a>
+            </div>
+            <div class="flex justify-center mt-8">
+                <button id="prev-event" class="sketch-button mr-4">Previous</button>
+                <button id="next-event" class="sketch-button">Next</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Carousel -->
+    <section id="testimonials" class="bg-gray-100 py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center sketch-text sketch-underline">What Our Clients Say</h2>
+            <div class="testimonial-carousel">
+                <div class="testimonial-item active">
+                    <div class="sketch-bubble">
+                        <p>"SketchBrand transformed our vision into reality. Their creative approach and attention to
+                            detail brought our ideas to life in ways we never imagined!"</p>
+                    </div>
+                    <div class="client-info">
+                        <img src="https://i.pravatar.cc/150?img=1" alt="Sarah Johnson" class="client-image">
+                        <div>
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <p class="text-gray-600">CEO, InnoTech Solutions</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="event-card">
-                    <div class="sketch-image" data-sketch="conference"></div>
-                    <h3 class="text-2xl font-bold mb-2 sketch-text">Design Conference</h3>
-                    <p class="mb-2">Date: August 5-7, 2023</p>
-                    <p class="mb-4">Connect with industry leaders and emerging talents.</p>
-                    <a href="#" class="sketch-button">Learn More</a>
+                <div class="testimonial-item">
+                    <div class="sketch-bubble">
+                        <p>"Working with SketchBrand was a game-changer for our brand. Their innovative designs and
+                            strategic thinking helped us stand out in a crowded market."</p>
+                    </div>
+                    <div class="client-info">
+                        <img src="https://i.pravatar.cc/150?img=2" alt="Mike Chen" class="client-image">
+                        <div>
+                            <h4 class="font-bold">Mike Chen</h4>
+                            <p class="text-gray-600">Founder, GreenLeaf Eco</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="sketch-bubble">
+                        <p>"The team at SketchBrand doesn't just create designs; they craft experiences. Our customers
+                            have been raving about our new brand identity!"</p>
+                    </div>
+                    <div class="client-info">
+                        <img src="https://i.pravatar.cc/150?img=3" alt="Emily Rodriguez" class="client-image">
+                        <div>
+                            <h4 class="font-bold">Emily Rodriguez</h4>
+                            <p class="text-gray-600">Marketing Director, Fusion Foods</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="testimonials" class="bg-gray-100 py-16">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-8 text-center sketch-text">What Our Clients Say</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="testimonial-card">
-                    <div class="sketch-quote"></div>
-                    <p class="mb-4">SketchBrand transformed our vision into reality. Their creative approach and attention to detail are unmatched!</p>
-                    <p class="font-bold">- Sarah Johnson, CEO of InnoTech</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="sketch-quote"></div>
-                    <p class="mb-4">Working with SketchBrand was a game-changer for our brand. They brought fresh ideas and exceptional execution.</p>
-                    <p class="font-bold">- Mike Chen, Founder of GreenLeaf</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Testimonials Carousel Script -->
+    <script>
+
+        let currentIndex = 0;
+        const testimonials = document.querySelectorAll('.testimonial-item');
+        const totalTestimonials = testimonials.length;
+        let testimonialIndex = 0;
+
+        function showNextTestimonial() {
+            const currentTestimonial = testimonials[currentIndex];
+            const nextIndex = (currentIndex + 1) % totalTestimonials;
+            const nextTestimonial = testimonials[nextIndex];
+
+            // Add previous class to current testimonial and remove active class
+            currentTestimonial.classList.remove('active');
+            currentTestimonial.classList.add('prev');
+
+            // Add active class to the next testimonial
+            nextTestimonial.classList.add('active');
+
+            // After transition, remove 'prev' class from the previous testimonial
+            setTimeout(() => {
+                currentTestimonial.classList.remove('prev');
+            }, 1000); // 1s delay to match CSS transition duration
+
+            // Update the current index
+            currentIndex = nextIndex;
+        }
+
+        // Automatically change testimonials every 5 seconds
+        setInterval(showNextTestimonial, 6000);
+    </script>
+
 
     <section id="contact" class="bg-white py-16">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-8 text-center sketch-text">Get in Touch</h2>
+            <h2 class="text-4xl font-bold mb-12 text-center sketch-text">Get in Touch</h2>
             <div class="flex flex-wrap -mx-3 mb-6">
                 <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <form id="contact-form" class="sketch-form">
-                        <div class="mb-4">
+                        <div class="mb-6">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Name</label>
                             <input class="sketch-input" id="name" type="text" placeholder="Your Name">
                         </div>
-                        <div class="mb-4">
+                        <div class="mb-6">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
                             <input class="sketch-input" id="email" type="email" placeholder="your@email.com">
                         </div>
                         <div class="mb-6">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="message">Message</label>
-                            <textarea class="sketch-input" id="message" placeholder="Your message here..." rows="4"></textarea>
+                            <textarea class="sketch-input" id="message" placeholder="Your message here..."
+                                rows="4"></textarea>
                         </div>
                         <div class="flex items-center justify-between">
                             <button class="sketch-button" type="submit">Send Message</button>
@@ -173,10 +288,11 @@
                 </div>
                 <div class="w-full md:w-1/2 px-3">
                     <div class="sketch-map" id="map"></div>
-                    <div class="mt-4">
-                        <p class="mb-2"><strong>Address:</strong> 123 Creativity Lane, Imagination City, 12345</p>
-                        <p class="mb-2"><strong>Phone:</strong> (555) 123-4567</p>
-                        <p class="mb-2"><strong>Email:</strong> hello@sketchbrand.com</p>
+                    <div class="mt-6">
+                        <p class="mb-2"><i class="fas fa-map-marker-alt mr-2 text-orange-500"></i>123 Creativity Lane,
+                            Imagination City, 12345</p>
+                        <p class="mb-2"><i class="fas fa-phone mr-2 text-orange-500"></i>(555) 123-4567</p>
+                        <p class="mb-2"><i class="fas fa-envelope mr-2 text-orange-500"></i>hello@sketchbrand.com</p>
                     </div>
                 </div>
             </div>
@@ -184,6 +300,78 @@
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.15/paper-full.min.js"></script>
+   
+
+    <footer class="sketch-footer bg-gray-100 pt-24 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
+                <div class="footer-section col-span-1 md:col-span-2">
+                    <h3 class="text-3xl font-bold mb-4 sketch-text">SketchBrand</h3>
+                    <p class="mb-4">Bringing your ideas to life with creative flair and strategic thinking. We're not just designers; we're your partners in visual storytelling.</p>
+                    <div class="newsletter-form mb-6">
+                        <h4 class="text-lg font-semibold mb-2">Join our creative community:</h4>
+                        <form class="flex">
+                            <input type="email" placeholder="Your email" class="sketch-input flex-grow mr-2">
+                            <button type="submit" class="sketch-button">Subscribe</button>
+                        </form>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#" class="sketch-icon" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="w-4 h-4"><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+                        </a>
+                        <a href="#" class="sketch-icon" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+                        </a>
+                        <a href="#" class="sketch-icon" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                        </a>
+                        <a href="#" class="sketch-icon" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4"><path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+                        </a>
+                        <a href="#" class="sketch-icon" aria-label="YouTube">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="w-4 h-4"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="text-xl font-bold mb-4 sketch-text">Quick Links</h3>
+                    <ul class="sketch-list">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="text-xl font-bold mb-4 sketch-text">Get in Touch</h3>
+                    <p class="mb-2"><i class="fas fa-map-marker-alt mr-2"></i>123 Creativity Lane, Design City, 12345</p>
+                    <p class="mb-2"><i class="fas fa-phone mr-2"></i>(555) 123-4567</p>
+                    <p class="mb-2"><i class="fas fa-envelope mr-2"></i>hello@sketchbrand.com</p>
+                    <div class="mt-6">
+                        <h4 class="text-lg font-semibold mb-2">Business Hours:</h4>
+                        <p>Monday - Friday: 9am - 6pm</p>
+                        <p>Saturday: 10am - 4pm</p>
+                        <p>Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="sketch-divider mb-8"></div>
+            <div class="flex flex-wrap justify-between items-center">
+                <p>&copy; 2023 SketchBrand. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-gray-600">Privacy Policy</a>
+                    <a href="#" class="hover:text-gray-600">Terms of Service</a>
+                    <a href="#" class="hover:text-gray-600">Sitemap</a>
+                </div>
+            </div>
+        </div>
+        <div class="sketch-footer-decoration"></div>
+    </footer>
+
+
     <script src="script.js"></script>
 </body>
+
 </html>
