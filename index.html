@@ -13,76 +13,111 @@
 </head>
 
 <body class="bg-gray-100 font-sans">
-   <!-- Header -->
-<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
-    <nav class="container mx-auto px-6 py-3">
-        <div class="flex justify-between items-center">
-            <a href="#" class="text-3xl font-bold sketch-text">SketchBrand</a>
-            <div class="hidden md:flex space-x-6">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-3xl font-bold sketch-text">SketchBrand</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#" class="sketch-link">Home</a>
+                    <a href="#" class="sketch-link">About</a>
+                    <a href="#" class="sketch-link">Services</a>
+                    <a href="#" class="sketch-link">Contact</a>
+                </div>
+                <button class="sketch-button menu-button md:hidden">Menu</button>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden flex flex-col space-y-2 mt-3">
                 <a href="#" class="sketch-link">Home</a>
                 <a href="#" class="sketch-link">About</a>
                 <a href="#" class="sketch-link">Services</a>
                 <a href="#" class="sketch-link">Contact</a>
             </div>
-            <button class="sketch-button menu-button md:hidden">Menu</button>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden flex flex-col space-y-2 mt-3">
-            <a href="#" class="sketch-link">Home</a>
-            <a href="#" class="sketch-link">About</a>
-            <a href="#" class="sketch-link">Services</a>
-            <a href="#" class="sketch-link">Contact</a>
-        </div>
-    </nav>
-</header>
+        </nav>
+    </header>
 
-<!-- Mobile menu script -->
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Mobile menu functionality
-        const menuButton = document.querySelector('.menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile menu functionality
+            const menuButton = document.querySelector('.menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
 
-        menuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
 
-        // Navbar behavior on scroll
-        const header = document.querySelector('header');
-        let lastScrollTop = 0;
+            // Navbar behavior on scroll
+            const header = document.querySelector('header');
+            let lastScrollTop = 0;
 
-        function handleScroll() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            function handleScroll() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-            // Change background color on scroll
-            if (scrollTop > 50) {
-                header.classList.add('bg-white', 'shadow-lg');
-                header.classList.remove('bg-transparent');
-            } else {
-                header.classList.remove('bg-white', 'shadow-lg');
-                header.classList.add('bg-transparent');
+                // Change background color on scroll
+                if (scrollTop > 50) {
+                    header.classList.add('bg-white', 'shadow-lg');
+                    header.classList.remove('bg-transparent');
+                } else {
+                    header.classList.remove('bg-white', 'shadow-lg');
+                    header.classList.add('bg-transparent');
+                }
+
+                // Show/Hide navbar based on scroll direction
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    // Scrolling down - hide the navbar
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    // Scrolling up - show the navbar
+                    header.style.transform = 'translateY(0)';
+                }
+
+                lastScrollTop = scrollTop;
             }
 
-            // Show/Hide navbar based on scroll direction
-            if (scrollTop > lastScrollTop && scrollTop > 100) {
-                // Scrolling down - hide the navbar
-                header.style.transform = 'translateY(-100%)';
-            } else {
-                // Scrolling up - show the navbar
-                header.style.transform = 'translateY(0)';
-            }
+            // Throttle scroll event for performance
+            window.addEventListener('scroll', () => {
+                handleScroll();
+            });
 
-            lastScrollTop = scrollTop;
-        }
-
-        // Throttle scroll event for performance
-        window.addEventListener('scroll', () => {
+            // Initialize navbar state
             handleScroll();
         });
 
-        // Initialize navbar state
-        handleScroll();
-    });
-</script>
+        // JavaScript for the FAQ accordion
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            toggleItem(otherItem, false);
+                        }
+                    });
+
+                    // Toggle the clicked item
+                    toggleItem(item, !isActive);
+                });
+            });
+
+            function toggleItem(item, isOpen) {
+                const answer = item.querySelector('.faq-answer');
+
+                if (isOpen) {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                } else {
+                    item.classList.remove('active');
+                    answer.style.maxHeight = '0';
+                }
+            }
+        });
+    </script>
 
 
     <!-- Hero -->
@@ -294,7 +329,51 @@
         setInterval(showNextTestimonial, 6000);
     </script>
 
+      <!-- FAQ -->
+      <section id="faq" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center sketch-text sketch-underline">Frequently Asked Questions
+            </h2>
+            <div class="max-w-3xl mx-auto text-center mb-10">
+                <h3 class="faq-subheading">Your Questions, Answered</h3>
+                <p class="faq-description">Here are some of the most common questions our clients ask. Click on a
+                    question to reveal the answer.</p>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What services do you offer?</span>
+                            <div class="faq-icon">
+                                <div class="line line-1"></div>
+                                <div class="line line-2"></div>
+                            </div>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We offer a wide range of creative services including brand identity design, illustration,
+                                web design, and print design. Our sketch-based approach brings a unique, handcrafted
+                                feel to every project.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How long does a typical project take?</span>
+                            <div class="faq-icon">
+                                <div class="line line-1"></div>
+                                <div class="line line-2"></div>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Project timelines vary depending on the scope and complexity. A typical branding project
+                                might take 4-6 weeks, while a simple illustration could be completed in 1-2 weeks. We'll
+                                provide a detailed timeline during our initial consultation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Contact -->
     <section id="contact" class="bg-white py-16">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold mb-12 text-center sketch-text">Get in Touch</h2>
@@ -331,6 +410,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- Footer -->
     <footer class="sketch-footer bg-gray-100 pt-24 pb-8">
