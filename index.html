@@ -35,142 +35,19 @@
         </nav>
     </header>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Mobile menu functionality
-            const menuButton = document.querySelector('.menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            menuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-
-            // Navbar behavior on scroll
-            const header = document.querySelector('header');
-            let lastScrollTop = 0;
-
-            function handleScroll() {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-                // Change background color on scroll
-                if (scrollTop > 50) {
-                    header.classList.add('bg-white', 'shadow-lg');
-                    header.classList.remove('bg-transparent');
-                } else {
-                    header.classList.remove('bg-white', 'shadow-lg');
-                    header.classList.add('bg-transparent');
-                }
-
-                // Show/Hide navbar based on scroll direction
-                if (scrollTop > lastScrollTop && scrollTop > 100) {
-                    // Scrolling down - hide the navbar
-                    header.style.transform = 'translateY(-100%)';
-                } else {
-                    // Scrolling up - show the navbar
-                    header.style.transform = 'translateY(0)';
-                }
-
-                lastScrollTop = scrollTop;
-            }
-
-            // Throttle scroll event for performance
-            window.addEventListener('scroll', () => {
-                handleScroll();
-            });
-
-            // Initialize navbar state
-            handleScroll();
-        });
-
-        // JavaScript for the FAQ accordion
-        document.addEventListener('DOMContentLoaded', () => {
-            const faqItems = document.querySelectorAll('.faq-item');
-
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                const answer = item.querySelector('.faq-answer');
-
-                question.addEventListener('click', () => {
-                    const isActive = item.classList.contains('active');
-
-                    // Close all other items
-                    faqItems.forEach(otherItem => {
-                        if (otherItem !== item && otherItem.classList.contains('active')) {
-                            toggleItem(otherItem, false);
-                        }
-                    });
-
-                    // Toggle the clicked item
-                    toggleItem(item, !isActive);
-                });
-            });
-
-            function toggleItem(item, isOpen) {
-                const answer = item.querySelector('.faq-answer');
-
-                if (isOpen) {
-                    item.classList.add('active');
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
-                } else {
-                    item.classList.remove('active');
-                    answer.style.maxHeight = '0';
-                }
-            }
-        });
-    </script>
-
-
-    <!-- Hero -->
-    <section id="hero" class="container mx-auto px-6 py-16 relative">
-        <div class="flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-8 md:mb-0">
-                <h1 class="text-5xl md:text-6xl font-bold mb-4 sketch-text">Unleash Your Creativity</h1>
-                <p class="text-xl mb-8 sketch-text">Where imagination meets innovation. Let's bring your ideas to life!
-                </p>
-                <a href="#" class="sketch-button text-lg px-6 py-3">Get Started</a>
+    <!-- Hero Section -->
+    <section class="relative bg-[#FFB74D] text-gray-800 py-20">
+        <div class="absolute inset-0 bg-white opacity-80"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h1 class="text-6xl font-extrabold mb-4 leading-tight sketch-text">Ignite Your Imagination</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Join a vibrant community of writers and explore endless opportunities to express your creativity and share your stories.</p>
+            <div class="flex justify-center mb-8">
+                <a href="#explore" class="sketch-button bg-white text-[#FF9F55] hover:bg-gray-200 transition duration-300 px-8 py-4 rounded-full font-semibold shadow-lg mr-4">Discover Opportunities</a>
+                <a href="#join" class="sketch-button bg-transparent border-2 border-[#FF9F55] hover:bg-[#FF9F55] hover:text-white transition duration-300 px-8 py-4 rounded-full font-semibold shadow-lg">Join Our Community</a>
             </div>
-            <div class="md:w-1/2">
-                <div id="sketch-canvas" class="w-full h-64 md:h-96 bg-white rounded-lg shadow-lg"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="bg-gray-100 py-16">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-8 text-center sketch-text">Our Creative Journey</h2>
-            <div class="timeline relative">
-                <div class="timeline-item left">
-                    <div class="content">
-                        <h3 class="text-2xl font-bold mb-2 sketch-text">The Spark</h3>
-                        <p class="mb-4">It all began with a simple idea: to bring imagination to life through design.
-                        </p>
-                        <div class="sketch-image" data-sketch="lightbulb"></div>
-                    </div>
-                </div>
-                <div class="timeline-item right">
-                    <div class="content">
-                        <h3 class="text-2xl font-bold mb-2 sketch-text">The Adventure</h3>
-                        <p class="mb-4">We embarked on a journey, exploring new territories of creativity and
-                            innovation.</p>
-                        <div class="sketch-image" data-sketch="mountain"></div>
-                    </div>
-                </div>
-                <div class="timeline-item left">
-                    <div class="content">
-                        <h3 class="text-2xl font-bold mb-2 sketch-text">The Growth</h3>
-                        <p class="mb-4">With each project, we learned, adapted, and grew, nurturing our passion for
-                            design.</p>
-                        <div class="sketch-image" data-sketch="tree"></div>
-                    </div>
-                </div>
-                <div class="timeline-item right">
-                    <div class="content">
-                        <h3 class="text-2xl font-bold mb-2 sketch-text">The Impact</h3>
-                        <p class="mb-4">Today, we're proud to create designs that inspire and make a difference.</p>
-                        <div class="sketch-image" data-sketch="ripple"></div>
-                    </div>
-                </div>
+            <img src="https://via.placeholder.com/800x400" alt="Creative Writing" class="mx-auto rounded-lg shadow-2xl mt-6">
+            <div class="mt-10">
+                <p class="text-lg italic">"Creativity takes courage." - Henri Matisse</p>
             </div>
         </div>
     </section>
@@ -497,6 +374,91 @@
         </div>
         <div class="sketch-footer-decoration"></div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile menu functionality
+            const menuButton = document.querySelector('.menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Navbar behavior on scroll
+            const header = document.querySelector('header');
+            let lastScrollTop = 0;
+
+            function handleScroll() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                // Change background color on scroll
+                if (scrollTop > 50) {
+                    header.classList.add('bg-white', 'shadow-lg');
+                    header.classList.remove('bg-transparent');
+                } else {
+                    header.classList.remove('bg-white', 'shadow-lg');
+                    header.classList.add('bg-transparent');
+                }
+
+                // Show/Hide navbar based on scroll direction
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    // Scrolling down - hide the navbar
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    // Scrolling up - show the navbar
+                    header.style.transform = 'translateY(0)';
+                }
+
+                lastScrollTop = scrollTop;
+            }
+
+            // Throttle scroll event for performance
+            window.addEventListener('scroll', () => {
+                handleScroll();
+            });
+
+            // Initialize navbar state
+            handleScroll();
+        });
+
+        // JavaScript for the FAQ accordion
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            toggleItem(otherItem, false);
+                        }
+                    });
+
+                    // Toggle the clicked item
+                    toggleItem(item, !isActive);
+                });
+            });
+
+            function toggleItem(item, isOpen) {
+                const answer = item.querySelector('.faq-answer');
+
+                if (isOpen) {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                } else {
+                    item.classList.remove('active');
+                    answer.style.maxHeight = '0';
+                }
+            }
+        });
+    </script>
+
 
 
     <script src="script.js"></script>
